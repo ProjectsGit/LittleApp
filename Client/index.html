@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Testing Application</title>
+
+  <link rel="stylesheet" type="text/css" href="./css/lib/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <link rel="stylesheet" type="text/css" href="./css/login.css">
+  <link rel="stylesheet" type="text/css" href="./css/goodsList.css">
+
+  <script type="text/javascript" src="./js/lib/angular.min.js"></script>
+  <script type="text/javascript" src="./js/lib/angular-route.min.js"></script>
+  <script type="text/javascript" src="./js/lib/ui-bootstrap-tpls-0.12.1.min.js"></script>
+
+
+  <script type="text/javascript" src="./js/modules/userProfile.js"></script>
+  <script type="text/javascript" src="./js/modules/loginModule.js"></script>
+  <script type="text/javascript" src="./js/modules/utilsModule.js"></script>
+
+  <script type="text/javascript" src="./js/controllers/goodsListController.js"></script>
+  <script type="text/javascript" src="./js/controllers/editItemController.js"></script>
+  <script type="text/javascript" src="./js/controllers/editProfileController.js"></script>
+
+
+  <script type="text/javascript" src="./js/modules/appMainModule.js"></script>
+
+
+
+</head>
+<body ng-app="appMain" ng-controller="appController">
+
+  <div id="loadingApp" class="dvLoading">
+    <div class="dvLoadingContent">
+      <div class="dvElem">
+        <img src="./images/loading.gif">
+      </div>
+    </div>
+  </div>
+
+  <user-info ng-show="isUserInfoShow" value="userActive"></user-info>
+
+  <div id="mainContainer" ng-view></div>
+
+</body>
+</html>

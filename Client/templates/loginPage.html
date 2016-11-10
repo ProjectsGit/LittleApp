@@ -1,0 +1,47 @@
+﻿
+<div id="loginContainer" class="ng-scope" >
+  <div id="loginForm">
+    <form name="form" novalidate>
+      <div id="titleArea">
+        <span>Testing Project</span>
+        <br><span>admin@gmail.com / 111111</span>
+        <br><span>user@gmail.com / 222222</span>
+      </div>
+      <div class="dvErrorMessage" ng-show="(errorMessage != '')">
+        <span ng-bind="errorMessage"></span>
+      </div>
+      <div class="dvField">
+        <img src="images/userEmail16.png">
+        <input type="email" ng-model="userEmail" name="UserEmailInput" placeholder="E-mail address" required>
+        <div class="dvErrorMessage" ng-show="isNoValid && form.UserEmailInput.$error.required">
+          <span>Required field!</span>
+        </div>
+        <div class="dvErrorMessage" ng-show="isNoValid && form.UserEmailInput.$error.email">
+          <span>Invalid email!</span>
+        </div>
+      </div>
+
+      <div class="dvField">
+        <img src="images/userPassword16.png">
+        <input ng-model="userPassword" name="UserPassword" type="password" placeholder="Password" ng-minlength="6" ng-maxlength="16" ng-pattern="/^[a-zA-Z0-9]+$/" required>
+        <div class="dvErrorMessage" ng-show="isNoValid && form.UserPassword.$error.required">
+          <span>Required field!</span>
+        </div>
+        <div class="dvErrorMessage" ng-show="isNoValid && (form.UserPassword.$error.minlength || form.UserPassword.$error.maxlength || form.UserPassword.$error.pattern)">
+          <span>Invalid password! - should have the size from 6 to 16 and contains the symbols [a-zA-Z0-9]</span>
+        </div>
+      </div>
+      <div class="dvField">
+        <input id="btnLogin" ng-click="clickLogin(form)" type="submit" value="login" ng-disabled="isLoginProcessing">
+      </div>
+      <div class="dvField dvRemember">
+        <label class="check" >
+          <input id="rememberMe" ng-model="rememberMe" type="checkbox" name="RememberMe">Remember me
+        </label>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>

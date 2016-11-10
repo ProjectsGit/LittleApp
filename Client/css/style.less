@@ -1,0 +1,212 @@
+﻿
+@textColor: #000000;
+@textErrorColor: #ff0000;
+@borderCell: 1px solid #7b7b7b;
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  width: 100%;
+
+  font-family: Arial, sans-serif;
+  color: @textColor;
+}
+
+.dvLoading {
+  display: block;
+  width: 100%;  
+  height: 100%;
+  .dvLoadingContent {
+    display: table;
+    margin: 0 auto;
+    height: 100%;
+
+    .dvElem {
+      display: table-cell;
+      vertical-align: middle;
+
+      img {
+        width: 48px;
+      }
+    }
+  }
+}
+
+#userInfoCtnr {
+  position: absolute;
+  top: 0px;
+  z-index: 1;
+  width: 100%;
+  padding: 5px 10px;
+  background-color: #d8d6d8;
+  color: #292929;
+  
+  a {
+    margin-left: 5px;
+    text-decoration: underline;
+  }
+}
+
+#mainContainer {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  font-family: Arial, sans-serif;
+  padding: 40px 15px 0px 15px;
+
+  .dvContentCtnr {
+  }
+
+  .dvTableCtnr {
+    padding-bottom: 15px;
+
+      table {
+        font-size: 15px;
+        border-collapse: separate;
+        border-spacing: 0px;
+
+        tr {
+          th, td {
+            border: @borderCell;
+            border-right: none;
+            padding: 5px 15px;
+          }
+          td {
+            border-top: none;
+
+          }
+          th:last-child, td:last-child {
+            border-right: @borderCell;
+          }
+          td.colName {
+            cursor: pointer;
+          }
+        } 
+        @colorCell: #ffffff;
+        tr.selected {
+          color: @colorCell;
+          background-color: #6c99bd;
+          a {
+            color: @colorCell;
+          }
+          .dvEditProperty .dvChange .spRequired {
+            color: #ffed01;
+          }
+        }
+
+      }
+      .tblGoodsList {
+        width: 500px;
+      }
+
+      textarea {
+        min-height: 100px;
+      }
+
+      .trDetailsArea {
+        td {
+          padding: 0px;
+        }
+
+        div {
+          display: block;
+          padding: 0px 10px;
+          overflow: hidden;
+          height: auto;
+          max-height: 0;
+          min-height: 0px;
+          -webkit-transition: max-height 1.3s ease-in-out, padding 0.5s ease-in-out;
+          transition: max-height 1.3s ease-in-out, padding 0.5s ease-in-out;
+        } 
+        div.expandArea {
+          max-height: 300px;
+          padding: 10px 0px 10px 10px;
+        }
+      }
+    }  
+
+  .dvTitle {
+    margin-bottom: 20px;
+    span {
+      font-size: 21px;
+      font-weight: bold;
+    }
+  }
+
+  .dvActionMessage {
+    margin-bottom: 10px;
+  }
+
+  .dvErrorMessage {
+    color: @textErrorColor;
+  }
+  .dvInfoMessage {
+    color: #009213;
+  }
+  
+  .dvInfo {
+    font-size: 13px;
+    margin-top: 3px;
+    color: #3a3636;
+  }
+
+  .dvButtonsCtnr {
+    margin-top: 10px;
+    input {
+      padding: 2px 15px;
+      font-size: 14px;
+      margin-right: 10px;
+    }
+  }
+  .dvButtonsCtnr.dvTopCtrn {
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+
+  .dvEditCtnr {
+    table {
+      tr:first-child {
+        td {
+          border-top: @borderCell;
+        }
+      }
+      td:first-child {
+        font-weight: bold;
+      }
+
+      input, textarea {
+        min-width: 300px;
+        width: 100%;
+      }
+      
+      .tdPhone {
+        span {
+          margin-right: 5px;
+        }
+        input {
+          width: auto;
+        }
+      }
+
+    }
+
+    .dvErrorMessage {
+      margin-top: 2px;
+    }
+
+    .dvChangePasswordArea {
+      margin-top: 10px;
+      .dvField {
+        margin-top: 10px;
+      }
+    }
+    
+
+  }
+
+}
+
+
+
+
